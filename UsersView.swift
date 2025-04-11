@@ -8,13 +8,6 @@ struct UsersView: View {
                 NavigationLink("Paciente 2", destination: PatientDetailView())
             }
             .navigationTitle("Usuarios")
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Añadir") {
-                        // Añadir nuevo paciente
-                    }
-                }
-            }
         }
     }
 }

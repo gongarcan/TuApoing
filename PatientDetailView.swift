@@ -5,13 +5,9 @@ struct PatientDetailView: View {
     @State private var newNote = ""
 
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("Historial Clínico").font(.title2)
-            List {
-                ForEach(notes, id: \.self) { note in
-                    Text(note)
-                }
-            }
+        VStack {
+            Text("Historial Clínico")
+            List(notes, id: \.self) { Text($0) }
             HStack {
                 TextField("Nueva nota...", text: $newNote)
                 Button("Guardar") {
@@ -20,9 +16,7 @@ struct PatientDetailView: View {
                         newNote = ""
                     }
                 }
-            }.padding()
-        }
-        .padding()
-        .navigationTitle("Ficha del Paciente")
+            }
+        }.padding()
     }
 }
